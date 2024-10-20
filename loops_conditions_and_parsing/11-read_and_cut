@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# The Bash script uses a while loop to read each line from the /etc/passwd file. 
+# It then extracts the username, user ID, and home directory path from each line 
+# using the cut command and field separators. Finally, it prints the extracted information in a formatted way.
+
+while read -r line
+do
+    echo "$line" | cut -d ":" -f 1,3,6
+done < /etc/passwd
